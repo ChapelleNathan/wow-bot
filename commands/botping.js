@@ -5,6 +5,6 @@ module.exports = {
 		.setName('botping')
 		.setDescription('Vous donne la latence du bot'),
 	async execute(interaction) {
-		await interaction.reply(`Voici la latence de loutreke bot ${interaction.client.ws.ping} ms !`);
+		await interaction.reply(`Voici la latence de loutreke bot ${interaction.client.ws.ping} ms :saluting_face: !`);
 	},
 };
