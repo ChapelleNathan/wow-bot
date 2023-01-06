@@ -9,7 +9,6 @@ const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('
 for (const file of commandFiles) {
 	const command = require(`./commands/${file}`);
 	commands.push(command.data.toJSON());
-	console.log(command.data.toJSON());
 }
 const rest = new REST({ version : 10 }).setToken(token);
 
@@ -20,6 +19,7 @@ const rest = new REST({ version : 10 }).setToken(token);
 			Routes.applicationGuildCommands(clientId, guildId),
 			{ body: commands },
 		);
+		console.log(data);
 		console.log(`Succussfuly reloaded ${data.length} application (/) commands`);
 	}
 	catch (error) {
